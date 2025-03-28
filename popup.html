@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Isaías.Dev - Code Errors</title>
+  <style>
+    body {
+      width: 300px;
+      height: 300px;
+      font-family: Arial, sans-serif;
+      padding: 10px;
+    }
+    h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      max-height: 180px;
+      overflow-y: auto;
+    }
+    .error {
+      background-color: #f8d7da;
+      padding: 5px;
+      margin: 5px 0;
+      border-radius: 3px;
+    }
+    .error span {
+      font-weight: bold;
+    }
+    #clear-errors {
+      margin-top: 10px;
+      padding: 5px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      width: 100%;
+    }
+    #clear-errors:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h2>Errors Detected</h2>
+  <ul id="error-list"></ul>
+  <button id="clear-errors">Clear Errors</button>
+  <script src="popup.js"></script>
+</body>
+</html>
+
