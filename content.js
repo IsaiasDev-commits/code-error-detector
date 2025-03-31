@@ -2,7 +2,7 @@ const errors = [];
 const cssErrors = [];
 const accessibilityErrors = [];
 
-// Función para verificar errores de sintaxis en JavaScript
+// Verificar errores de sintaxis en JavaScript
 try {
   eval("let x = ;");  // Error de sintaxis para pruebas
 } catch (e) {
@@ -17,7 +17,6 @@ try {
   Array.from(stylesheets).forEach(sheet => {
     try {
       Array.from(sheet.cssRules).forEach(rule => {
-        // Validar propiedades CSS
         if (rule.style && rule.style.length > 0) {
           Array.from(rule.style).forEach(prop => {
             if (!rule.style[prop]) {
@@ -38,13 +37,14 @@ try {
 const images = document.querySelectorAll('img');
 images.forEach(img => {
   if (!img.hasAttribute('alt') || img.getAttribute('alt').trim() === '') {
-    img.setAttribute('alt', 'Image missing description'); // Agregar un alt por defecto
+    img.setAttribute('alt', 'Image missing description');
     accessibilityErrors.push(`Fixed Accessibility: Added 'alt' attribute to image ${img.src}`);
   }
 });
 
-// Enviar los errores al popup
+// Enviar errores al popup
 const allErrors = [...errors, ...cssErrors, ...accessibilityErrors];
 if (allErrors.length > 0) {
   chrome.runtime.sendMessage({ errors: allErrors });
 }
+

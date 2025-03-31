@@ -1,12 +1,14 @@
 {
-  "manifest_version": 2,
-  "name": "Isaías.Dev",
+  "manifest_version": 3,
+  "name": "Code Error Detector",
+  "description": "Detect and display JavaScript, CSS, and accessibility errors on web pages.",
   "version": "1.0",
-  "description": "Detects common coding errors in HTML, CSS, and JavaScript.",
-  "permissions": ["activeTab"],
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
@@ -14,13 +16,18 @@
       "js": ["content.js"]
     }
   ],
-  "browser_action": {
+  "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
     }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
   }
 }
 
