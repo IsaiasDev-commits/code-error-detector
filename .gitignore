@@ -1,0 +1,8 @@
+# .gitignore
+config.js
+*.env
+secrets/
+api-keys.json
+private/
+.env.local
+.DS_Store
